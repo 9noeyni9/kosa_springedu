@@ -8,7 +8,7 @@
 <h2>요청 방식 : [[${ #request.method }]]</h2>
 <h2>요청 대상 : [[${ #request.requestURI }]]</h2>
 <hr>
-<h2>쿼리 문자열 : [[${ param.pageno }]]</h2>
+<h2>쿼리 문자열 : [[${ param.pageno }]]</h2><!--pageno 이름으로 전달되는 쿼리 문자열 추출 전달되는 문자열 없으면 무시--><!--#기호 없이 쓰는 내장 객체가 param,session,application가 있음--><!--param.pageno:pageno의 이름으로 전달된 value값을 전달하시요-->
 <hr>
 <a th:href='${ #request.getHeader("referer") }'>다시 요청 해보자</a>
 </body>

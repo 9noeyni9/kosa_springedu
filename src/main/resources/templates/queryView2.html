@@ -7,16 +7,13 @@
 <body>
 <h2>Forward from QueryStringController2 to queryView2.html</h2>
 <hr>
-	<ul th:if="${queryVO != null}">
-			<li>[[${ queryVO.testName }]]</li>
-			<li>[[${ queryVO.testAge }]]</li>
-			<li>[[${ queryVO.testAddr }]]</li>
+	<ul th:if="${queryDTO != null}"><!--if태그 참이면 ul태그 나오고 거짓이면 무시됨-->
+			<li>[[${ queryDTO.testName }]]</li>
+			<li>[[${ queryDTO.testAge }]]</li>
+			<li>[[${ queryDTO.testAddr }]]</li>
 	</ul>
 <h3>Total Query String : [[${ spring }]]</h3>
 <hr>
 <a th:href='${ #request.getHeader("referer") }'>입력화면</a>
 </body>
 </html>
-
-
-

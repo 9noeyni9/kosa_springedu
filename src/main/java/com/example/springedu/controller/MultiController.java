@@ -21,7 +21,7 @@ public class MultiController {
 	@RequestMapping(value="/viewTest")
 	public void void_proc(int pageno) {
 		System.out.println("viewTest ............");
-	}	
+	} /*void_proc:return값 없음 자동으로 이름 같은 값을 찾아줌*/	
 }
 
 
