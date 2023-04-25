@@ -4,11 +4,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
-@SessionAttributes("data1")
+@SessionAttributes("data1")/*SessionAttributes:class에만 정의됨 지금은 data1만 Sessionscope data2는 requestscope*/
 public class TestModelController3 {
 	@ModelAttribute("data1")
 	public StringBuffer createModel1() {	
-		System.out.println("createModel1() 호출");
+		System.out.println("createModel1() 호출");/*sessionscope인 command 메서드는 최초의 한번만 생성되고 그거 사용 */
 		return new StringBuffer();
 	}
 	@ModelAttribute("data2")

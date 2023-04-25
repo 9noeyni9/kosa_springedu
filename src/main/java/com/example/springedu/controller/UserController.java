@@ -14,7 +14,7 @@ public class UserController {
 	@ModelAttribute("popularFruit")
 	public String[] refPopularFruit() {
 		System.out.println("popularFruit 명으로 보관될 문자열 배열객체 생성과 보관");
-		return new String[] { "사과", "포도", "수박", "참외" };
+		return new String[] { "사과", "포도", "수박", "딸기" };
 	}
 
 	@RequestMapping(value = "/userForm", method = RequestMethod.GET)
@@ -24,7 +24,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/userSave", method = RequestMethod.POST)
-	public String userSave(UserVO userVo, Model model) {
+	public String userSave(UserVO userVo, Model model) {/*이렇게 하면 재사용*/
 		System.out.println("----- UserController.userSave() : POST -----");
 		System.out.println("userInfo : " + userVo.toString());
 		model.addAttribute("msg", "SUCCESS");

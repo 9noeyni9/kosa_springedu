@@ -12,7 +12,7 @@ public class StepController {
 	@PostMapping("/step")
 	public String memberHandle(@ModelAttribute("kkk") StepVO vo) {
 		if(vo.getAge() < 18)
-			return "redirect:/stepForm.html";
+			return "redirect:/stepForm.html";/*다시 요청해서 가져가야할 때 : redirect*/
 		System.out.println("[ 전달된 Command 객체의 정보 ]");
 		System.out.println(vo.getName());
 		System.out.println(vo.getPhoneNumber());

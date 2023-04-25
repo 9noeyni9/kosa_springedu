@@ -14,7 +14,7 @@ public class StaticController {
 		ModelAndView viewModel = new ModelAndView(view);
 		return viewModel;
 	}	
-}
+}/*기능을 지원하는 view객체 직접 생성해서 주면 되는데 InternalResourceView 정적자원에는 이미지도 포함*/
 
 
 

@@ -29,8 +29,8 @@ public class CountController {
 		System.out.println("=============================");
 	}
 	@RequestMapping(value="/countdel")
-	public void handle(SessionStatus s) {
-		s.setComplete();
+	public void handle(SessionStatus s) {/*리턴값이 void 그럼 view는 뭐가 되남 : requestmapping시 사용된 이름 countdel*/
+		s.setComplete();/*들어있는 데이터 다 삭제 원하는 애만 삭제 가능한가? 없다 ㅠ*/
 		System.out.println("Both count1 and count2 deleted!");	
 		System.out.println("=============================");
 	}	

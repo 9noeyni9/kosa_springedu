@@ -41,7 +41,7 @@ public class TestModelController1 {
 		list.add(vo);
 		return list;
 	}	
-	@RequestMapping("/modeltest1")
+	@RequestMapping("/modeltest1")/*controller메서드는 얘 하나 (RequestMapping,GetMapping,PostMapping 붙어있는 거 찾으면 돼)*/
 	public String handle() {
 		System.out.println("handle() 메서드 호출");		
 		return "modelResult1";
