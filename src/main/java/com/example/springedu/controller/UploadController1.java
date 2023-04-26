@@ -10,12 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UploadController1 {
-	@RequestMapping("/uploadForm1")
+	@RequestMapping("/uploadForm1")/*템플릿으로 넘기기만 함*/
 	public void formFile() {	   
 	}
 	@RequestMapping("/upload1")
 	public ModelAndView saveFile(FileVO1 vo) {
-	     String fileName =  vo.getUploadFile().getOriginalFilename();
+	     String fileName =  vo.getUploadFile().getOriginalFilename();/*getOriginalFilename : 이거 알려는 이유 저장할 때 이름 그대로 저장하려고*/
 
 	     byte[] content = null;
 	     ModelAndView mav = new ModelAndView();

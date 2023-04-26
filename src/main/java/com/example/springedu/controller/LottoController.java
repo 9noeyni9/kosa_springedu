@@ -29,17 +29,19 @@ public class LottoController {
         if (count < 4) {
             if (resultNum == vo.getLottoNum()) {
                 vo.setImgName("sun.png");
+                System.out.println(vo.getImgName());
                 vo.setResult("추카추카!!");
             } else {
                 vo.setImgName("rain.png");
+                System.out.println(vo.getImgName());
                 vo.setResult("아쉽네요.. 다음 기회에..");
-                model.addAttribute("msg", "<a th:href='${ #request.getHeader(\"referer\") }'>입력 화면</a>");
+                model.addAttribute("msg", "msg");
             }
             s.setAttribute("tryCount", count + 1);
             System.out.println(s.getAttribute("tryCount"));
         } else {
             vo.setImgName("snow.png");
-            vo.setResult("로또 응모는 낙첨된 경우에 한하여 3번까지만 가능합니다.<br>브라워를 재기동한 후에 응모해 주세요.");
+            vo.setResult("로또 응모는 낙첨된 경우에 한하여 3번까지만 가능합니다.브라우저를 재기동한 후에 응모해 주세요.");
         }
         return "lottoView";
     }

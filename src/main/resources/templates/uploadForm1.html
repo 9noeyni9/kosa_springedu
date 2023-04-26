@@ -10,10 +10,8 @@
 	<form th:unless="${ msg }" action="/upload1"  enctype="multipart/form-data" method="post">
     	<input type="file" name="uploadFile" />
     	<input type="submit" value="업로드"/>
-	</form>
+	</form><!--th:unless : 거짓이면 렌더링-->
 
 	 <h2 th:if="${ msg }" th:text="${ msg }"></h2>
 </body>
 </html>
-
-

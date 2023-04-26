@@ -7,9 +7,11 @@
 <body>
 <h2>로또 결과</h2>
 <hr>
-[[${ lotto.imgName }]]
+<img th:src="|../images/${ lotto.imgName }|" width="300px"/><br>
 [[${ lotto.result }]]
-
 <hr>
+<th:block th:if="${msg}">
+    <a th:href='${ #request.getHeader("referer") }'>재시도...</a>
+</th:block>
 </body>
 </html>

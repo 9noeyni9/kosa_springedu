@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication//(exclude = DataSourceAutoConfiguration.class)
 @ComponentScan(basePackages = {"com.example.springedu","thymeleaf.exam"})
 public class SpringeduApplication {
 

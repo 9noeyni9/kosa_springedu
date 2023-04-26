@@ -9,12 +9,12 @@
 <img width="500" src="">
 <script>
     window.addEventListener("load", () => {
-        fetch("/dataurl")
+        fetch("/dataurl")<!--dataurl 형식으로 저장하고 그걸 불러온 것-->
         .then((res) => {
            return res.text();
         }).then((content) => {
            alert(content)
-           document.querySelector("img").src = content;
+           document.querySelector("img").src = content;<!--**-->
         });
     });
 </script>

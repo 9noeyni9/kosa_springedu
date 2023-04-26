@@ -26,7 +26,7 @@ public class RequestBodyController {
     }
     @PostMapping(value = "/rb2", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String test2(@RequestBody String param) {
+    public String test2(@RequestBody String param) {/*RequestBody얘는 post요청 방식에서만 의미가 있음*/
         System.out.println(">>> " + param);
         return param;
     }

@@ -7,9 +7,44 @@
 <body>
 <h1>우리팀 소개</h1>
 <hr>
-<button name="teamName" value="우리 팀명"/><button name="teamIntro" value="우리 팀원"/>
-
+<button id="teamName">우리팀원</button><button id="teamIntro">팀원정보</button>
+<div id="view"></div>
 <script>
+    const teamNameBtn = document.getElementById("teamName");
+    const teamIntroBtn = document.getElementById("teamIntro");
+    const viewDiv = document.getElementById("view");
+
+    teamNameBtn.addEventListener("click",function(){
+    click_btn("teamName",function(teamName){
+      viewDiv.innerHTML = "<h3> 우리 팀의 팀명은 " + ${teamName}+"입니다.</h3>"
+      });
+    });
+
+    teamIntroBtn.addEventListener("click",function(){
+    click_btn("teamName",function(teamName){
+      viewDiv.innerHTML =
+           "<th: block th:each="list:${teamList}">
+             <li th:text="${name}"+"${nicName}"+"${food}">
+           </th:block>"
+      });
+    });
+
+    function click_btn(){
+      xhr.onload=function(){
+      if(e.target.tagName=="BUTTON"){
+       if(xhr.status==200){
+         const str = xhr.responseText;
+	     const obj = JSON.parse(str);
+
+		 const target = document.getElementsByTagName('div')[0]
+		 var id = e.target.id
+		 target.innerHTML= obj[id] ;
+       }
+      };
+      xhr.open("GET", "/edu/basket?id="+ e.target.id ,true);
+	  xhr.send();
+      }
+    }
 
 </script>
 </body>

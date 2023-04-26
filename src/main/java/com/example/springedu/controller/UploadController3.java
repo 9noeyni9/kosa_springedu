@@ -22,7 +22,8 @@ public class UploadController3 {
 	}
 
 	@RequestMapping("/upload3")
-	public ModelAndView saveFile(MultipartRequest mreq) {
+	public ModelAndView saveFile(MultipartRequest mreq) {/*MultipartRequest : 다중 파일일 때
+	 */
 		ModelAndView mav = new ModelAndView();
 		List<MultipartFile> list = mreq.getFiles("mfile");
 		System.out.println(list.size()+"개가 업로드 됨");

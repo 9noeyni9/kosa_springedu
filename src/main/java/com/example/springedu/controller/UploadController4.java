@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-@RestController
+@RestController/*controller가 직접 응답*/
 public class UploadController4 {
 	@RequestMapping(value="/canvasupload",
 			 produces="text/plain; charset=utf-8")	

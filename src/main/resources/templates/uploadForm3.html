@@ -8,7 +8,7 @@
 <h2>SpringMVC FileUpload(Multiple)-MultipartRequest</h2>
 <hr>
 	<form  th:unless="${ msg }" action="/upload3"  enctype="multipart/form-data" method="post">
-    	<input type="file" name="mfile" multiple/>
+    	<input type="file" name="mfile" multiple/><!--multiple속성-->
     	<input type="submit" value="파일올리기"/>
 	</form>
 	<h2 th:if="${ msg }" th:utext="${ msg }"></h2>

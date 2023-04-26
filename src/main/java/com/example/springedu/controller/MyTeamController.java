@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Controller
 public class MyTeamController {
 
-    @RequestMapping(value = "/body/json/teamName", produces = "application/json; charset=utf-8")  // text/json
+    @RequestMapping(value = "/body/json/{teamName}", produces = "application/json; charset=utf-8")  // text/json
     @ResponseBody
     public TeamDTO getByIdInJSON(){
 
@@ -32,8 +32,6 @@ public class MyTeamController {
         TeamDTO team = new TeamDTO();
         team.setTeamName("글써조");
         team.setTeamMember(teamList);
-
-
 
         return team;
     }

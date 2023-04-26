@@ -17,7 +17,7 @@
 </form>
 <hr>
 <h3>AJAX를 통한 요청</h3>
-<button id="rb2" data-pname="둘리">데이터 전송(JSON문자열추출)</button>
+<button id="rb2" data-pname="둘리">데이터 전송(JSON문자열추출)</button><!-- data-: pname이란 속성이 내장되있지 않은데 개발하면서 임의로 만들 때 data-붙여줘야함 -->
 <button id="rb3" data-pname="또치">데이터 전송(VO객체추출)</button>
 <button id="rb4" data-pname="도우너">데이터 전송(Map객체추출)</button>
 <script>
@@ -40,10 +40,7 @@
            document.querySelector("#msg_area").textContent = `${data.name}:${data.age}`;
        });
     };
-    buttons.forEach( elem =>  elem.addEventListener("click", postData));
+    buttons.forEach( elem =>  elem.addEventListener("click", postData));<!--람다식으로 정의-->
 </script>
 </body>
 </html>
-
-
-
