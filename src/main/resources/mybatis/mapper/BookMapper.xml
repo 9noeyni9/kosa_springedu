@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lab1">
+
+    <insert id="exam0" parameterType="BookDTO">
+        insert into book(title, price, kind) values (#{title},#{price},#{kind})
+    </insert>
+
     <select id="exam1" resultType="BookDTO">
         select id, title, price, kind from book
     </select>

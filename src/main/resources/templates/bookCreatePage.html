@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:unless="${list == null}" style="width: 300px; float: left;">
+    <h2>입력된 도서 정보</h2>
+    <hr>
+    <text th:unless="${list == null}">
+        [[${list}]]
+    </text>
+<!--    <a href="/bookinfo/b1">전체리스트 보기</a>-->
+
+
+</div>
+<div th:if="${list == null}" style="width: 300px; float: left;">
+    <h2>도서 정보 입력</h2>
+    <hr>
+    <form action="/createbook" method="post">
+        <table>
+            <tr>
+                <td>도서명 입력 : </td> <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td>가격 입력 : </td> <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>도서분류 선택 : </td><td><input type="radio" name="kind" value="b01">프로그래밍언어<br>
+                <input type="radio" name="kind" value="b02">웹 프로그래밍<br>
+                <input type="radio" name="kind" value="b03">빅데이터<br>
+                <input type="radio" name="kind" value="b04">데이터베이스<br>
+                <input type="radio" name="kind" value="b05">인프라</td>
+            </tr>
+        </table>
+
+        <button type="submit">등록</button>
+    </form>
+</div>
+</body>
+</html>

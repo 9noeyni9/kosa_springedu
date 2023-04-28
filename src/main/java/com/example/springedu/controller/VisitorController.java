@@ -2,6 +2,7 @@ package com.example.springedu.controller;
 
 import java.util.List;
 
+import com.example.springedu.dao.VisitorMapperDAO;
 import com.example.springedu.dao.VisitorMybatisDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,9 +15,11 @@ import com.example.springedu.domain.VisitorDTO;
 
 @Controller
 public class VisitorController {
-	@Autowired
-	VisitorMybatisDAO dao;
+//	@Autowired
+//	VisitorMybatisDAO dao;
 
+	@Autowired
+	VisitorMapperDAO dao;
 	@RequestMapping("/vlist")
 	public ModelAndView list() {
 		List<VisitorDTO> list = dao.list();

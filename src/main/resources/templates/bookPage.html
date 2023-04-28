@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>책 정보 출력</h1>
-<button th:onclick="|location.href='bookinfo/b1'|">모든 도서</button>
-<button th:onclick="|location.href='bookinfo/b3'|">가격이 20000원 보다 높은 도서</button>
-<button th:onclick="|location.href='bookinfo/b2'|">가격이 높은 순으로</button>
-<button th:onclick="|location.href='@{bookinfo/b4}'|">웹 프로그램 도서</button>
-<button th:onclick="|location.href='@{bookinfo/b5}'|">데이터베이스와 인프라 도서</button>
-<button th:onclick="|location.href='@{bookinfo/b6}'|">도서명에 자바를 포함하는 도서</button>
-<button th:onclick="|location.href='@{bookinfo/b7}'|">도서명에 스프링을 포함하는 도서</button>
-<button th:onclick="|location.href='@{bookinfo/b8}'|">분류별 도서 가격의 평균</button>
+<button th:onclick="|location.href='@{/bookinfo/b1}'|">모든 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b2}'|">가격이 20000원 보다 높은 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b3}'|">가격이 높은 순으로</button>
+<button th:onclick="|location.href='@{/bookinfo/b4}'|">웹 프로그램 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b5}'|">데이터베이스와 인프라 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b6}'|">도서명에 자바를 포함하는 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b7}'|">도서명에 스프링을 포함하는 도서</button>
+<button th:onclick="|location.href='@{/bookinfo/b8}'|">분류별 도서 가격의 평균</button>
 
 <hr>
 

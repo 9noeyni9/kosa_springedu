@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -16,6 +17,22 @@ import java.util.List;
 public class BookController {
     @Autowired
     BookMybatisDAO dao;
+
+    @RequestMapping(value = "/createBook", method = RequestMethod.GET)
+    public String getCreateBook(){
+        return "bookCreatePage";
+    }
+
+    @RequestMapping(value = "/createbook",method = RequestMethod.POST)
+    public ModelAndView insert(BookDTO vo){
+        boolean result = dao.insert(vo);
+        ModelAndView mav = new ModelAndView();
+        if(result){
+            mav.addObject("list", vo);
+        }
+        mav.setViewName("bookCreatePage");
+        return mav;
+    }
 
     @GetMapping(value = "/book")
     public String getBook(){
@@ -61,4 +78,5 @@ public class BookController {
         mav.setViewName("bookPage");
         return mav;
     }
+
 }

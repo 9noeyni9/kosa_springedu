@@ -35,6 +35,3 @@ public class CountController {
 		System.out.println("=============================");
 	}	
 }
-
-
-

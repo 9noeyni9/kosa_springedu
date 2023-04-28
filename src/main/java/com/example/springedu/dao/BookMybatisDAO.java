@@ -13,6 +13,18 @@ public class BookMybatisDAO {
     @Autowired
     SqlSession session;
 
+    public boolean insert(BookDTO book){
+        boolean result = false;
+        try{
+            String statement = "lab1.exam0";
+            if(session.insert(statement, book) == 1)/*insert의 return값은 int*/
+            result=true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return  result;
+    }
+
     public List<BookDTO> b1(){
         List<BookDTO> list = null;
         try{
