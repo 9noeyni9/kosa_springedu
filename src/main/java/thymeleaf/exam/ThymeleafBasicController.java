@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,17 +15,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/basic")
+@Slf4j
 public class ThymeleafBasicController {
 	
 	@GetMapping("/hithymeleaf")
     public String hiThymeleaf(Model model) {
+        log.error(getClass().getPackageName() + " : error로그를 테스트 합니다.");
+        log.warn(getClass().getPackageName() + " : warn 로그를 테스트 합니다.");
+        log.info(getClass().getPackageName() + " : info 로그를 테스트 합니다.");
+        log.debug(getClass().getPackageName() + " : debug 로그를 테스트 합니다.");
+        log.trace(getClass().getPackageName() + " : trace 로그를 테스트 합니다.");
         model.addAttribute("say", "안녕?");
         return "basic/hithymeleaf";
     }
 	
 	@GetMapping("/text-basic")
     public String textBasic(Model model) {
-        model.addAttribute("data", "Hello spring boot!");
+        model.addAttribute("data", "컨트롤러가 보낸 데이터!");
         return "basic/text-basic";
     }
 
@@ -60,22 +67,23 @@ public class ThymeleafBasicController {
         return "basic/basic-objects";
     }
 
-    @GetMapping("/basic-objects2")
-    public String basicObjects2(HttpSession session) {
-        //session.setAttribute("sessionData", "sessionData라는 이름으로 Session Scope 로 보관된 객체");
-        return "basic/basic-objects2";
-    }
-
     @GetMapping("/date")
     public String date(Model model) {
         model.addAttribute("localDateTime", LocalDateTime.now());
         return "basic/date";
     }
+    
+    @GetMapping("/utility")
+    public String utility(Model model) {     
+    	model.addAttribute("now",new java.util.Date());
+        model.addAttribute("num", 123456789);
+        return "basic/utility";
+    }
 
     @GetMapping("/link")
     public String link(Model model) {
-        model.addAttribute("param1", "data1");
-        model.addAttribute("param2", "data2");
+        model.addAttribute("param1", "aa");
+        model.addAttribute("param2", "bb");
         model.addAttribute("pageno", 1000);
         model.addAttribute("name", "line");
         model.addAttribute("number", 5);
@@ -137,13 +145,6 @@ public class ThymeleafBasicController {
         model.addAttribute("user", new User("userA", 10));
         addUsers(model); 
         return "basic/javascript";
-    }
-    
-    @GetMapping("/utility")
-    public String utility(Model model) {     
-    	model.addAttribute("now",new java.util.Date());        
-        model.addAttribute("num", 123456789);
-        return "basic/utility";
     }
     
     @GetMapping("/fragment1")
